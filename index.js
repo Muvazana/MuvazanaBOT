@@ -36,7 +36,7 @@ client.on('message', message =>{
             let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]));
             if(!person) return message.reply("Couldn't find member (please fill next args with mention)");
             let infoembed = new Discord.MessageEmbed()
-                .setColor(person.guild.me.displayHexColor)
+                .setColor(person.displayHexColor)
                 .setTitle("Info : ")
                 .setAuthor(person.user.username)
                 .addField("Full Username ", `${person.user.username}#${person.user.discriminator}`)
@@ -57,7 +57,7 @@ client.on('message', message =>{
             break;
         case 'help' :
             let helpembed = new Discord.MessageEmbed()
-                .setColor('#353535')
+                .setColor(person.displayHexColor)
                 .setTitle("Help : ")
                 .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command BOT")
                 .setTimestamp();
