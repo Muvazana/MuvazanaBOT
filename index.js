@@ -35,7 +35,7 @@ client.on('message', message =>{
             let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]));
             if(!person) return message.reply("Couldn't find member (please fill next args with mention)");
             let infoembed = new Discord.MessageEmbed()
-                .setColor('#00ff44')
+                .setColor(person.guild.me.displayHexColor)
                 .setTitle("Info : ")
                 .setAuthor(person.user.username)
                 .addField("Full Username ", `${person.user.username}#${person.user.discriminator}`)
