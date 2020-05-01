@@ -25,7 +25,7 @@ client.on('ready', () =>{
     });
 })
 
-bot.on('message', message =>{
+client.on('message', message =>{
     let args = message.content.substring(PREFIX.length).split(" ");
     switch(args[0]){
         case 'userinfo':
@@ -62,4 +62,4 @@ bot.on('message', message =>{
     }
 })
 
-bot.login(process.env.token);
+client.login(process.env.token);
