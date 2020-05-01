@@ -1,10 +1,28 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const {client} = require('discord.js');
+const {config} = require('dotenv');
+// const bot = new client.Client();
+
+const client = new Client({
+    disableEveryone: true
+});
 
 const token = 'NzA1MTk2NzA3NzU5MjU5NzA3.Xqq1Ow.Wl65L7AB6yd_KdZtRin1WztMU-s';
 const PREFIX = '>';
-bot.on('ready', () =>{
-    console.log('Bot has been ONLINE');
+
+config({
+    path: __dirname + "/.env"
+});
+
+client.on('ready', () =>{
+    console.log(`I am now online, my name is ${client.user.username}`);
+
+    client.user.setPresence({
+        status  : "online",
+        game    : {
+            name    : "Getting Developed",
+            type    : "WATCHING"
+        }
+    });
 })
 
 bot.on('message', message =>{
@@ -28,8 +46,13 @@ bot.on('message', message =>{
             if(message.author.id != 543738538932305930) return message.reply('Sorry you cant use this command');
             message.channel.bulkDelete(args[1]);
             break;
+        case 'server' :
+            setInterval({
+                
+            },);
+            break;
         case 'help' :
-            let helpembed = new Discord.MessageEmbed()
+            let helpembed = new client.MessageEmbed()
                 .setColor('#353535')
                 .setTitle("Help : ")
                 .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command BOT")
