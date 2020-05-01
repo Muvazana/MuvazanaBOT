@@ -32,7 +32,7 @@ bot.on('message', message =>{
             let helpembed = new Discord.MessageEmbed()
                 .setColor('#353535')
                 .setTitle("Help : ")
-                .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command sds")
+                .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command BOT")
                 .setTimestamp();
             message.channel.send(helpembed);
             break;
