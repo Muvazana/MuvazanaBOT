@@ -34,7 +34,7 @@ client.on('message', message =>{
         case 'userinfo':
             let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]));
             if(!person) return message.reply("Couldn't find member (please fill next args with mention)");
-            let infoembed = new client.MessageEmbed()
+            let infoembed = new Client.MessageEmbed()
                 .setColor(person.guild.me.displayHexColor)
                 .setTitle("Info : ")
                 .setAuthor(person.user.username)
