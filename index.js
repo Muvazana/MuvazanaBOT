@@ -2,7 +2,7 @@ const {client} = require('discord.js');
 const {config} = require('dotenv');
 // const bot = new client.Client();
 
-const client = new Client({
+client = new Client({
     disableEveryone: true
 });
 
