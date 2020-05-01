@@ -3,7 +3,7 @@ const {config} = require('dotenv');
 // const bot = new client.Client();
 
 const client = new Client({
-    disableEveryone: true
+    disableMentions: "everyone"
 });
 const PREFIX = '>';
 
@@ -16,11 +16,11 @@ client.on('ready', () =>{
 
     client.user.setPresence({
         status: "online",
-        game: {
-            name    : "Me getting Developed",
-            type    : "WATCHING"
+        activity: {
+            name: "Me getting Developed",
+            type: "WATCHING"
         }
-    });
+    })
 })
 
 // client.on('message', message =>{
