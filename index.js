@@ -1,4 +1,5 @@
 const {Client} = require('discord.js');
+const Discord = require('discord.js');
 const {config} = require('dotenv');
 // const bot = new client.Client();
 
@@ -34,7 +35,7 @@ client.on('message', message =>{
         case 'userinfo':
             let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]));
             if(!person) return message.reply("Couldn't find member (please fill next args with mention)");
-            let infoembed = new Client.MessageEmbed()
+            let infoembed = new Discord.MessageEmbed()
                 .setColor(person.guild.me.displayHexColor)
                 .setTitle("Info : ")
                 .setAuthor(person.user.username)
@@ -55,7 +56,7 @@ client.on('message', message =>{
             },);
             break;
         case 'help' :
-            let helpembed = new client.MessageEmbed()
+            let helpembed = new Discord.MessageEmbed()
                 .setColor('#353535')
                 .setTitle("Help : ")
                 .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command BOT")
