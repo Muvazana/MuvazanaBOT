@@ -37,7 +37,7 @@ client.on('message', async message =>{
     if(!message.content.startsWith(prefix)) return;
     if(!message.member) message.member = await message.member.fetch(message)
 
-    const args = message.content.slice(prefix.length).trim().split(" ");
+    const args = message.content.slice(prefix.length).trim().split(/ + /g);
     const cmd = args.shift().toLowerCase();
 
     if(cmd.length === 0) return;
