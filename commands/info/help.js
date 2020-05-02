@@ -7,7 +7,10 @@ module.exports = {
         let helpembed = new MessageEmbed()
             .setColor("#353535")
             .setTitle("Help : ")
-            .addField("Command ", ">userinfo @mention => Get User Info\n>help \t=> Show all command BOT")
+            .addField("Command ", ">ping => Check ping"
+                + "\n>userinfo @mention => Get User Info"
+                + "\n>help \t=> Show all command BOT"
+            )
             .setTimestamp();
         message.channel.send(helpembed);
     }
