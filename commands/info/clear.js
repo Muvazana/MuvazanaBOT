@@ -19,7 +19,7 @@ module.exports = {
                 console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
                 return message.reply('Access Clear for admin has been update to OFF');
             }else{
-                console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
+                console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR == false);
                 return message.reply('Update FAIL');
             }
         }else{
