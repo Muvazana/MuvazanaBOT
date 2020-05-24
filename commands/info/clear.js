@@ -5,7 +5,7 @@ module.exports = {
     run: async (client, message, args) =>{
         if(!args[0]) return message.reply('ERROR Args Please defind second Args');
         if(args[0] != "on" && args[0] != "off"){
-            if(message.author.id == 543738538932305930){
+            if(message.author.id == 543738538932305930 || (message.member.roles.cache.find("name", "admin") && process.env.ACCESSCLEAR)){
                 message.channel.bulkDelete(args[0]);
             }else return message.reply('Sorry you cant use this command');
         }
