@@ -9,14 +9,19 @@ module.exports = {
                 message.channel.bulkDelete(args[0]);
             }else return message.reply('Sorry you cant use this command');
         }
-        if(args[0] == on && message.author.id == 543738538932305930 && process.env.ACCESSCLEAR == false){
-            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
-            console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
-            return message.reply('Access Clear for admin has been update to ON');
-        }else if(args[0] == off && message.author.id == 543738538932305930 && process.env.ACCESSCLEAR == true){
-            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
-            console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
-            return message.reply('Access Clear for admin has been update to OFF');
+        if(message.author.id == 543738538932305930){
+            if(args[0] == "on" &&  process.env.ACCESSCLEAR == false){
+                process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
+                console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
+                return message.reply('Access Clear for admin has been update to ON');
+            }else if(args[0] == "off" && process.env.ACCESSCLEAR == true){
+                process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
+                console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
+                return message.reply('Access Clear for admin has been update to OFF');
+            }else{
+                console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
+                return message.reply('Update FAIL');
+            }
         }else{
             console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
             return message.reply('Sorry you cant use this command, Update FAIL');
