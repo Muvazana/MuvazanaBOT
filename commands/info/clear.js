@@ -10,10 +10,12 @@ module.exports = {
             }else return message.reply('Sorry you cant use this command');
         }
         if(args[0] == on && message.author.id == 543738538932305930 && process.env.ACCESSCLEAR == false){
-            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR
+            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
+            console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
             return message.reply('Access Clear for admin has been update to ON');
         }else if(args[0] == off && message.author.id == 543738538932305930 && process.env.ACCESSCLEAR == true){
-            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR
+            process.env.ACCESSCLEAR = !process.env.ACCESSCLEAR;
+            console.log("ACCESSCLEAR => ", process.env.ACCESSCLEAR);
             return message.reply('Access Clear for admin has been update to OFF');
         }else{
             return message.reply('Sorry you cant use this command, Update FAIL');
